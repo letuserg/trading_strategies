@@ -15,7 +15,7 @@ names(data_list) <- etfs
 combinations <- combn(etfs, 3)
 results <- data.frame(combination = character(), TestStatistic = numeric(), halflife = numeric(), APR = numeric(), Sharpe = numeric(), stringsAsFactors = FALSE)
 
-# My adaptation from mean reversion strategy programmed in MATLAB by Chan (2013)
+# My adaptation of mean reversion strategy programmed in MATLAB by Chan (2013)
 for(i in 1:ncol(combinations)) {
   etf1 <- data_list[[combinations[1,i]]]
   etf2 <- data_list[[combinations[2,i]]]
