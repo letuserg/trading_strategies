@@ -48,6 +48,7 @@ for(i in 1:ncol(combinations)) {
   results <- rbind(results, data.frame(combination = paste(combinations[,i], collapse = ", "), TestStatistic = test_statistic, halflife = as.numeric(halflife), APR = APR, Sharpe = Sharpe))
 }
 
+# filtered_combinations includes asset combinations which performed well (Sharpe ratio over 1) during the first backtesting period
 filtered_combinations <- results[results$Sharpe > 1,]$combination
 new_data_list <- lapply(etfs, function(symbol) {
   getSymbols(symbol, from="2022-04-11", to="2023-04-12", auto.assign = FALSE)[,6]
