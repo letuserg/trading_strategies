@@ -87,10 +87,10 @@ final_results <- data.frame(
   "Sharpe" = numeric()
 )
 
-# Loop through all futures in best_results_positive_sharpe
+# Loop through all futures in best_results_sharpeover0
 for (i in 1:nrow(best_results_sharpeover0)) {
   
-  # Get symbol and corresponding MA lengths from best_results_positive_sharpe
+  # Get symbol and corresponding MA lengths from best_results_sharpeover0
   symbol <- best_results_sharpeover0$Symbol[i]
   short_ma_length <- best_results_sharpeover0$Short_MA[i]
   long_ma_length <- best_results_sharpeover0$Long_MA[i]
